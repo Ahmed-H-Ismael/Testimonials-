@@ -1,0 +1,120 @@
+:root{
+--Moderateviolet:hsl(263, 55%, 52%);
+--dark-grayish-blue: hsl(217, 19%, 35%);
+--dark-blackish-blue: hsl(219, 29%, 14%);
+--white-color:hsl(0, 0%, 100);
+--Light-gray: hsl(0, 0%, 81%);
+--light-grayish-blue: hsl(210, 46%, 95%);
+}
+body{
+    box-sizing: border-box;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    background-color: var(--light-grayish-blue);
+}
+  
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+    grid-template-rows: repeat(2, [row-start] 1fr [row-end]);
+    padding: 5rem;
+    grid-gap: 2rem;
+}
+.container > section{
+    padding: 1rem 1.4rem;
+    border-radius: 10px;
+}
+.purple-section{
+    background-color: var(--Moderateviolet);
+    grid-column: col-start 1 / col-end 2;
+    position: relative;
+    z-index: 1;
+    order: -1;
+}
+.purple-section::after{
+    position: absolute;
+    content: "";
+    background-image: url(../images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    right:0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    z-index: -1;
+}
+.grey-section{
+background-color: var(--dark-grayish-blue);
+grid-column: col-start 3 / col-end 3;
+}
+.little-side{
+    background-color: white;
+    grid-column: col-start 1 / col-end 1;
+    grid-row: row-start 2 / row-end 2;
+}
+.black-section{
+    background-color: var(--dark-blackish-blue);
+    grid-column: col-start 2 / col-end 3;
+}
+.white-section{
+    background-color: white;
+    grid-column: col-start 4 / col-end 4;
+    grid-row: row-start 1/ row-end 2;
+}
+.id{
+    display: flex;
+}
+.id img{
+    border-radius: 50%;
+    width: 6%;
+    height: 6%;
+    margin-right: 1rem;
+    border: 3px solid var(--Light-gray);
+}
+.id .img2{
+    width: 15%;
+    height: 15%;
+}
+section p{
+    color: white;
+    font-weight: 600;
+    font-size: 19px;
+    margin-top: 0;
+}
+section p:last-child{
+    opacity: 70%;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+.id-name h3{
+    color: var(--Light-gray);
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 13px;
+}
+.id-name h4{
+    color: var(--Light-gray);
+    opacity: 50%;
+    margin-top: 0;
+    font-size: 13px;
+}
+.white-section p,.little-side p{
+    color: var(--dark-grayish-blue);
+    margin-top: 0;
+}
+@media only screen and (max-width: 1000px){
+    .container{
+        grid-template-rows: repeat(5,min-content);
+        padding: 1rem;
+        grid-gap: 1rem;
+    }
+    .container > section{
+        grid-column:  1 / -1;
+        margin-bottom: 2rem;
+}
+.little-side{
+    grid-row: 3/ 3;
+}
+.id .img2,.id img{
+    width: 10%;
+}
+}
