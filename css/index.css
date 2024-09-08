@@ -10,17 +10,24 @@ body{
     box-sizing: border-box;
     font-family: "Barlow Semi Condensed", sans-serif;
     background-color: var(--light-grayish-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
   
 .container{
     display: grid;
     grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
     grid-template-rows: repeat(2, [row-start] 1fr [row-end]);
-    padding: 5rem;
     grid-gap: 2rem;
+    align-content: center;
+    max-width: 1200px;
+    padding: 4rem;
 }
 .container > section{
-    padding: 1rem 1.4rem;
+    padding: 1.5rem;
     border-radius: 10px;
 }
 .purple-section{
@@ -37,7 +44,7 @@ body{
     background-repeat: no-repeat;
     right:0;
     top: 0;
-    width: 40%;
+    width: 37%;
     height: 100%;
     z-index: -1;
 }
